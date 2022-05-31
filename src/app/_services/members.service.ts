@@ -6,7 +6,7 @@ import { Member } from '../_modules/member';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    Authorization: 'Bearer' + JSON.parse(localStorage.getItem('user')).token
+    Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user'))?.token
   })
 }
 
@@ -19,7 +19,7 @@ export class MembersService {
   constructor(private http: HttpClient) { }
 
   getMembers() {
-    return this.http.get<Member[]>(this.baseUrl + 'users')
+    return this.http.get<Member[]>(this.baseUrl + 'users', httpOptions);
   }
 
   getMember(username: string) {

@@ -1,8 +1,6 @@
-import { Photo } from "./photo";
+import { photo } from "./photo"
 
-export type Member = Member1[]
-
-export interface Member1 {
+export interface Member {
   id: number;
   username: string;
   photourl: string;
@@ -16,7 +14,7 @@ export interface Member1 {
   interests: string;
   city: string;
   country: string;
-  photos: Photo[];
+  photos: photo[]
 }
 
 
